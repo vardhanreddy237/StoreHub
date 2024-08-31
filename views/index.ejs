@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stores</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <h1>STORES</h1>
+    <div class="logout-container">
+        <form action="/logout" method="POST" style="display:inline;">
+            <button type="submit" class="logout-button">Logout</button>
+        </form>
+    </div>        
+    <div class="store-list">
+        <% stores.forEach(store => { %>
+            <div class="store-item">
+                <a href="/store/<%= store.id %>">
+                    <img src="<%= store.image %>" alt="<%= store.name %>" style="width:100px; height:100px;">
+                    <h2><%= store.name %></h2>
+                </a>
+            </div>
+        <% }) %>
+    </div>
+    <br>
+    <a href="/add-store">Add a New Store</a>
+</body>
+</html>

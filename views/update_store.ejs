@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Store</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <h1>Update Store</h1>
+    <form action="/update-store/<%= store.id %>" method="POST" enctype="multipart/form-data">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" value="<%= store.name %>"><br>
+
+        <label for="location">Location:</label>
+        <input type="text" name="location" id="location" value="<%= store.location %>"><br>
+
+        <label for="contact_number">Contact Number:</label>
+        <input type="text" name="contact_number" id="contact_number" value="<%= store.contact_number %>"><br>
+
+        <label for="available_products">Available Products:</label>
+        <input type="text" name="available_products" id="available_products" value="<%= store.available_products %>"><br>
+
+        <label for="website">Website:</label>
+        <input type="text" name="website" id="website" value="<%= store.website %>"><br>
+
+        <label for="open_at">Open At:</label>
+        <input type="time" name="open_at" id="open_at" value="<%= store.open_at %>"><br>
+
+        <label for="close_at">Close At:</label>
+        <input type="time" name="close_at" id="close_at" value="<%= store.close_at %>"><br>
+
+        <label for="image">Current Image:</label><br>
+        <img src="<%= store.image %>" alt="Store Image" width="100"><br>
+
+        <label for="image">Upload New Image (optional):</label>
+        <input type="file" name="image" id="image"><br>
+
+        <input type="hidden" name="current_image" value="<%= store.image %>">
+
+        <button type="submit">Update Store</button>
+    </form>
+</body>
+</html>
